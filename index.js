@@ -20,7 +20,9 @@ function handleStoryCard(card) {
                 choices: card.answers.map(a => ({name: a.value, value: a.next}))
             }])
             .then(answers => {
-                handleStoryCard(data.storyCards[answers.main])
+                const nextCard = data.storyCards[answers.main]
+                if (nextCard) handleStoryCard(data.storyCards[answers.main])
+                else console.log('It looks like this part of the story has not been written yet.')
             })
     } else {
         console.log("\nTHE END!\n\n")

@@ -17,15 +17,48 @@
         }
       ]
     },
-    "startMountains": {
-      "bodies": [
-        "The mountains look boring today. Let's just stay home. The end."
-      ]
-    },
     "startDungeon": {
       "bodies": [
-        "The dungeon is scary. You walk in. There are monsters in the dungeon.",
-        "When you walk in the dungeon, the monsters are nice to you."
+        "The dungeon is so dark, you can't see where you are going.",
+        "You have to use your hands to feel the walls to figure out where you are going.",
+        "You come to a fork. You can go left or right."
+      ],
+      "prompt": "Which way do you want to go?",
+      "answers": [
+        {"value": "Left", "next": "dungeonTurnLeft"},
+        {"value": "Right", "next": "dungeonTurnRight"}
+      ]
+    },
+    "dungeonTurnRight": {
+      "bodies": [
+        "You find a really big cage with people that got lost in the dungeon in it.",
+        "All the people in the cage are asleep for some reason.",
+        "They seem to be in a deep, deep sleep."
+      ],
+      "prompt": "Do you want to wake them up or look for the key to open the cage?",
+      "answers": [
+        {"value": "Wake them up", "next": "wakeUpPrisoners"},
+        {"value": "Look for key", "next": "lookForKeyToCage"}
+      ]
+    },
+    "lookForKeyToCage": {
+      "bodies": [
+        "You find a hook high up on the ceiling. You cannot reach it. The key is on the hook.",
+        "You keep wandering around and you find an oddly large step stool so you can reach the key.",
+        "You go back to the key and get it and then you go back to the cage.",
+        "You put the step stool back where you found it.",
+        "You open the cage. You try to wake up one of the people, but you can't wake them up."
+      ],
+      "prompt": "What do you want to do?",
+      "answers": [
+        {"value": "Lift all the people up with your super muscles", "next": "exitTheDungeon"},
+        {"value": "Search around the dungeon for another way to help them", "next": "meetMonster"}
+      ]
+    },
+    "meetMonster": {
+      "bodies": [
+        "The dungeon is scary. You walk and walk through the dungeon.",
+        "You find a monster."
       ],
       "prompt": "What do you want to say?",
       "answers": [
