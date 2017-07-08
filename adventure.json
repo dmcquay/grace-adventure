@@ -1,0 +1,69 @@
+{
+  "title": "Grace's Adventure",
+  "storyCards": {
+    "start": {
+      "bodies": [
+        "You are going on an adventure."
+      ],
+      "prompt": "Do you want to go to the mountains or the dungeon?",
+      "answers": [
+        {
+          "value": "The mountains",
+          "next": "startMountains"
+        },
+        {
+          "value": "The dungeon",
+          "next": "startDungeon"
+        }
+      ]
+    },
+    "startMountains": {
+      "bodies": [
+        "The mountains look boring today. Let's just stay home. The end."
+      ]
+    },
+    "startDungeon": {
+      "bodies": [
+        "The dungeon is scary. You walk in. There are monsters in the dungeon.",
+        "When you walk in the dungeon, the monsters are nice to you."
+      ],
+      "prompt": "What do you want to say?",
+      "answers": [
+        {
+          "value": "Hello",
+          "next": "monsterReply"
+        },
+        {
+          "value": "Ahhhhh! A monster!",
+          "next": "monsterScared"
+        }
+      ]
+    },
+    "monsterScared": {
+      "bodies": [
+        "The monster says \"Ahhhhhhh!\"",
+        "You both are quiet for a moment and then you realize that you have scared the monster.",
+        "Perhaps you should say something nice."
+      ],
+      "prompt": "What do you want to say?",
+      "answers": [
+        {
+          "value": "Hello",
+          "next": "monsterReply"
+        },
+        {
+          "value": "Ahhhhh! A monster!",
+          "next": "monsterScared"
+        }
+      ]
+    },
+    "monsterReply": {
+      "bodies": [
+        "The monster says hello.",
+        "Wait a second. What's that sound I heard? The princess!",
+        "There are so many people that you can't even see her.",
+        "But when somebody scooted over you saw her"
+      ]
+    }
+  }
+}
